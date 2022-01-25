@@ -1,0 +1,32 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "commerce": {
+                "flowbox": {
+                    "label": "Flowbox"
+                }
+            }
+        },
+        "elements": {
+            "flow": {
+                "config": {
+                    "label": {
+                        "flowKey": "Flow Key",
+                        "tags": "Stichworte",
+                        "tagsOperator": "Stichworte Operator",
+                        "tabmenuTags": "Register-Menü-Tags"
+                    },
+                    "placeholder": {
+                        "flowKey": "Flow Key eingeben...",
+                        "tags": "Ein Stichworte pro Zeile...",
+                        "tabmenuTags": "Ein Tag pro Zeile, stellen Sie sicher, dass das erste dasselbe ist wie bei Tags"
+                    },
+                    "value": {
+                        "all": "Alle",
+                        "any": "Irgendein"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{% block sw_cms_element_config_flow %}
+<div class="sw-cms-el-config-flow">
+
+    {% block sw_cms_element_flow_config_flow_key %}
+        <sw-field
+            v-model="element.config.flowKey.value"
+            type="text"
+            :label="$tc('sw-cms.elements.flow.config.label.flowKey')"
+            :placeholder="$tc('sw-cms.elements.flow.config.placeholder.flowKey')">
+        </sw-field>
+    {% endblock %}
+
+
+    {% block sw_cms_element_flow_config_flow_flowLocale %}
+        <sw-field
+            v-model="element.config.flowLocale.value"
+            type="text"
+            :label="$tc('sw-cms.elements.flow.config.label.flowLocale')"
+            :placeholder="$tc('sw-cms.elements.flow.config.placeholder.flowLocale')">
+        </sw-field>
+    {% endblock %}
+
+
+
+    {% block sw_cms_element_flow_config_flow_tags %}
+        <sw-textarea-field
+            type="textarea"
+            v-model="element.config.flowTags.value"
+            :label="$tc('sw-cms.elements.flow.config.label.tags')"
+            :placeholder="$tc('sw-cms.elements.flow.config.placeholder.tags')">
+        </sw-textarea-field>
+    {% endblock %}
+
+    {% block sw_cms_element_flow_config_flow_tags_operator %}
+        <sw-select-field
+            :label="$tc('sw-cms.elements.flow.config.label.tagsOperator')"
+            v-model="element.config.flowTagsOperator.value">
+            <option value="all">{{ $tc('sw-cms.elements.flow.config.value.all') }}</option>
+            <option value="any">{{ $tc('sw-cms.elements.flow.config.value.any') }}</option>
+        </sw-select-field>
+    {% endblock %}
+
+    {% block sw_cms_element_flow_config_flow_tabmenu_tags %}
+        <sw-textarea-field
+            type="textarea"
+            v-model="element.config.flowTabmenuTags.value"
+            :label="$tc('sw-cms.elements.flow.config.label.tabmenuTags')"
+            :placeholder="$tc('sw-cms.elements.flow.config.placeholder.tabmenuTags')">
+        </sw-textarea-field>
+    {% endblock %}
+
+</div>
+{% endblock %}

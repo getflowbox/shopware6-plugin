@@ -1,0 +1,9 @@
+// Filter menu based on tags
+.flowbox-tags {
+    text-align: center;
+    margin-bottom: 30px;
+
+    .btn.is--active {
+        @extend .btn-primary;
+    }
+}

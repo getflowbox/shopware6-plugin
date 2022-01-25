@@ -1,0 +1,44 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block layout_head_javascript_tracking %}
+
+    {{ parent() }}
+
+    {%  set flowboxEnableCheckoutScript =  shopware.config.DutchdropsFlowbox6.config.enableCheckoutScript %}
+
+    {% if flowboxEnableCheckoutScript  %}
+        {%  set flowboxPdpIdentifier = shopware.config.DutchdropsFlowbox6.config.ProductIdentifier  %}
+        {%  set flowboxCheckoutIdentifier =  shopware.config.DutchdropsFlowbox6.config.ApiKey  %}
+        {%  set products = [] %}
+
+        {% for key, lineItem in page.order.nestedLineItems %}
+            {%  if flowboxPdpIdentifier == "sku" %}
+                {% set products = products[key]["id"]|merge([lineItem.productNumber]) %}
+            {%  else %}
+                {% set products = products[key]["id"]|merge([lineItem.articleID]) %}
+            {% endif %}
+            {% set products = products[key]["quanrity"]|merge([lineItem.quantity]) %}
+        {%  endfor %}
+
+        <script>
+            !function (e, t) {
+                var o = document.createElement("script");
+                o.type = "text/javascript", o.readyState ? o.onreadystatechange = function () {
+                    ("loaded" === o.readyState || "complete" === o.readyState) && (o.onreadystatechange = null, t())
+                } : o.onload = function () {
+                    t()
+                }, o.src = e, document.getElementsByTagName("head")[0].appendChild(o)
+            }("//connect.getflowbox.com/bzfy-checkout.js", function () {
+                window.flowboxCheckout.checkout({
+                    apiKey:"{{ flowboxCheckoutIdentifier }}",
+                products: {{ Products|json_encode() }},
+                    orderId:{{ page.order.orderNumber }}
+                    })
+                });
+
+        </script>
+    {%  endif  %}
+
+
+
+{% endblock %}

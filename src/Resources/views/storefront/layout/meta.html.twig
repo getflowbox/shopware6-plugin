@@ -1,0 +1,7 @@
+{% sw_extends 'storefront/layout/meta.html.twig' %}
+
+{# Block for tracking scripts which are required to include in the `head` section of the document #}
+{% block layout_head_javascript_tracking %}
+    {{ parent() }}
+    {% sw_include '/storefront/component/flowbox-snippet.html.twig' %}
+{% endblock %}

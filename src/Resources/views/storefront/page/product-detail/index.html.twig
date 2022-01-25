@@ -1,0 +1,45 @@
+{% sw_extends 'storefront/page/product-detail/index.html.twig' %}
+
+{% block page_product_detail_cross_selling %}
+
+    {% set flowboxPdpPosition = shopware.config.DutchdropsFlowbox6.config.flowboxPdpPosition %}
+    {% set flowboxPdpDynamic = shopware.config.DutchdropsFlowbox6.config.flowboxPdpDynamic %}
+    {% set ProductIdentifier = shopware.config.DutchdropsFlowbox6.config.ProductIdentifier %}
+
+    {%  if ProductIdentifier == 'sku' %}
+        {% set PId = page.product.sku %}
+    {%  else %}
+        {% set PId = page.product.parentId %}
+    {% endif %}
+
+    {% if flowboxPdpPosition != "before" %}
+        {{ parent() }}
+    {% endif %}
+
+    {% set flowboxPdpActive = shopware.config.DutchdropsFlowbox6.config.flowboxPdpActive %}
+
+    {% if flowboxPdpActive == "yes" and page.product.customFields.custom_flowbox_flow_hide == false %}
+        <div class="product-flowbox-container">
+            {% set flowboxPdpLanguage = shopware.config.DutchdropsFlowbox6.config.flowLanguage %}
+            {% set flowboxPdpKey = shopware.config.DutchdropsFlowbox6.config.flowboxPdpFlowKey %}
+
+            {% set flowboxConf = {
+                "container": "#js-flowbox-flow-" ~ page.product.parentId,
+                "key": flowboxPdpKey,
+                "locale": flowboxPdpLanguage
+            } %}
+
+            {% if flowboxPdpDynamic == "yes" %}
+                {% set flowboxConf = flowboxConf|merge({'productId': page.product.parentId}) %}
+            {% endif %}
+
+            {% sw_include "storefront/element/cms-element-flow.html.twig" ignore missing
+                with {'fbId': PId, 'fbConf': flowboxConf} %}
+        </div>
+    {% endif %}
+
+    {% if flowboxPdpPosition != "after" %}
+        {{ parent() }}
+    {% endif %}
+
+{% endblock %}

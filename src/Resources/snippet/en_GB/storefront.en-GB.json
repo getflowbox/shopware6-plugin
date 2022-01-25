@@ -1,0 +1,10 @@
+{
+    "flowbox": {
+        "cookieConsent": {
+            "name": "Flowbox Cookies",
+            "description": "Flowbox platform",
+            "nonSecure": "HTTP",
+            "secure": "HTTPS"
+        }
+    }
+}

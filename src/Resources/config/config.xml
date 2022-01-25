@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Flow Settings</title>
+        <title lang="de-DE">Flow Einstellungen</title>
+
+        <input-field type="single-select">
+            <name>flowLanguage</name>
+            <label>Flow Language</label>
+            <label lang="de-DE">Flow Sprache</label>
+            <defaultValue>en</defaultValue>
+            <options>
+                <option>
+                    <id>en</id>
+                    <name>English</name>
+                    <name lang="de-DE">Englisch</name>
+                </option>
+                <option>
+                    <id>de</id>
+                    <name>German</name>
+                    <name lang="de-DE">Deutsche</name>
+                </option>
+                <option>
+                    <id>da</id>
+                    <name>Danish</name>
+                    <name lang="de-DE">Dänisch</name>
+                </option>
+                <option>
+                    <id>es</id>
+                    <name>Spanish</name>
+                    <name lang="de-DE">Spanisch</name>
+                </option>
+                <option>
+                    <id>fi</id>
+                    <name>Finnish</name>
+                    <name lang="de-DE">Finnisch</name>
+                </option>
+                <option>
+                    <id>fr</id>
+                    <name>French</name>
+                    <name lang="de-DE">Französisch</name>
+                </option>
+                <option>
+                    <id>nl</id>
+                    <name>Dutch</name>
+                    <name lang="de-DE">Niederländisch</name>
+                </option>
+                <option>
+                    <id>nb</id>
+                    <name>Norwegian Bokmål</name>
+                    <name lang="de-DE">Norwegischer Bokmål</name>
+                </option>
+                <option>
+                    <id>pt</id>
+                    <name>Portuguese</name>
+                    <name lang="de-DE">Portugiesisch</name>
+                </option>
+                <option>
+                    <id>sv</id>
+                    <name>Swedish</name>
+                    <name lang="de-DE">Schwedisch</name>
+                </option>
+            </options>
+        </input-field>
+
+
+        <input-field type="single-select">
+            <name>ProductIdentifier</name>
+            <options>
+                <option>
+                    <id>sku</id>
+                    <name>Product Sku field</name>
+                    <name lang="de-DE">Product Sku field</name>
+                </option>
+                <option>
+                    <id>id</id>
+                    <name>Product Shopware Id field</name>
+                    <name lang="de-DE">Product Shopware Id field</name>
+                </option>
+            </options>
+        </input-field>
+
+
+
+        <input-field type="single-select">
+            <name>flowboxPdpActive</name>
+            <label>Show Flow on product detail page</label>
+            <label lang="de-DE">Flow auf Produktdetailseite anzeigen</label>
+            <defaultValue>no</defaultValue>
+            <options>
+                <option>
+                    <id>yes</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+                <option>
+                    <id>no</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>flowboxPdpDynamic</name>
+            <label>Dynamic Flow based on product id?</label>
+            <label lang="de-DE">Dynamischer Flow basierend auf Produkt-ID?</label>
+            <defaultValue>no</defaultValue>
+            <options>
+                <option>
+                    <id>yes</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+                <option>
+                    <id>no</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>flowboxPdpPosition</name>
+            <label>Flow position on product detail page</label>
+            <label lang="de-DE">Flow position auf der Produktdetailseite</label>
+            <defaultValue>after</defaultValue>
+            <options>
+                <option>
+                    <id>after</id>
+                    <name>After Cross Selling Block</name>
+                    <name lang="de-DE">Nach Cross Selling Block</name>
+                </option>
+                <option>
+                    <id>before</id>
+                    <name>Before Cross Selling Block</name>
+                    <name lang="de-DE">Vor dem Cross Selling Block</name>
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="text">
+            <name>flowboxPdpFlowKey</name>
+            <label>Flow Key</label>
+            <label lang="de-DE">Flow Key</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>enableCheckoutScript</name>
+            <label>enable Checkout Script for Flowbox</label>
+            <label lang="de-DE">enable Checkout Script for Flowbox</label>
+        </input-field>
+
+
+
+        <input-field type="text">
+            <name>ApiKey</name>
+            <label>Flow Checkout Api Key</label>
+            <label lang="de-DE">Flow Checkout Api Key</label>
+        </input-field>
+
+
+    </card>
+</config>

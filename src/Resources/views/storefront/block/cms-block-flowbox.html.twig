@@ -1,0 +1,33 @@
+{% block block_flowbox %}
+    {% set element = block.slots.getSlot('content') %}
+
+    <div class="col-12" data-cms-element-id="{{ element.id }}">
+        {% block block_flowbox_inner %}
+
+            {% if element.config.locale.value %}
+                {% set locale = element.config.locale.value %}
+            {%  else %}
+                {% set locale = shopware.config.DutchdropsFlowbox6.config.flowLanguage %}
+            {% endif %}
+            {% set flowboxConf = {
+                "container": "#js-flowbox-flow-" ~ element.id,
+                "key": element.config.flowKey.value,
+                "locale": locale,
+                "allowCookies" : true
+            } %}
+
+            {% if element.config.flowTags.value %}
+                {% set fbTags = element.config.flowTags.value|split("\n") %}
+                {% set flowboxConf = flowboxConf|merge({'tags': fbTags, 'tagsOperator': element.config.flowTagsOperator.value}) %}
+            {% endif %}
+
+            {% if element.config.flowTabmenuTags.value %}
+                {% set fbTabmenuTags = element.config.flowTabmenuTags.value|split("\n") %}
+            {% endif %}
+
+            {% sw_include "storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing
+                with {'fbKey': element.config.flowKey.value, 'fbId': element.id, 'fbConf': flowboxConf, 'fbTabmenuTags': fbTabmenuTags} %}
+
+        {% endblock %}
+    </div>
+{% endblock %}

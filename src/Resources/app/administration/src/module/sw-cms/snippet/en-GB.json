@@ -1,0 +1,34 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "commerce": {
+                "flowbox": {
+                    "label": "Flowbox"
+                }
+            }
+        },
+        "elements": {
+            "flow": {
+                "config": {
+                    "label": {
+                        "flowKey": "Flow Key",
+                        "tags": "Tags",
+                        "flowLocale": "Locale for element",
+                        "tagsOperator": "Tags Operator",
+                        "tabmenuTags": "Tab Menu Tags"
+                    },
+                    "placeholder": {
+                        "flowLocale": "Set local for this flow (empty call back to default)",
+                        "flowKey": "Enter Flow Key...",
+                        "tags": "One tag per line...",
+                        "tabmenuTags": "One tag per line, make sure the first one is the same as by Tags"
+                    },
+                    "value": {
+                        "all": "All",
+                        "any": "Any"
+                    }
+                }
+            }
+        }
+    }
+}

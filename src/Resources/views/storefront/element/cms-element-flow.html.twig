@@ -1,0 +1,21 @@
+{% block element_flow %}
+
+{% if fbTabmenuTags %}
+    {% set flowboxPluginOptions = {
+        flowboxKey: fbKey
+    } %}
+
+    <div class="flowbox-tags" data-flowbox-tab-menu-tags-options="{{ flowboxPluginOptions|json_encode }}" data-flowbox-tabmenu-tags="true">
+        {% for tabmenuTag in fbTabmenuTags %}
+            <button data-tag="{{ tabmenuTag }}" class="btn btn-light flowbox-tag{% if loop.first %} is--active{% endif %}" aria-label="Flowbox tabs">{{ tabmenuTag }}</button>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<div id="js-flowbox-flow-{{ fbId }}"></div>
+
+<script>
+    window.flowbox('init', {{ fbConf|json_encode()|raw() }});
+</script>
+
+{% endblock %}
