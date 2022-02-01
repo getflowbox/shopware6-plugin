@@ -6,7 +6,7 @@
   "license": "proprietary",
   "authors": [
     {
-        "name": "Dutchdrops"
+        "name": "Flowbox"
     }
   ],
   "require": {
@@ -29,12 +29,12 @@
         "en-GB": "Flowbox provides a platform which collects user-generated content from social media and enables clients to receive the legal rights to use it in their marketing and communications."
     },
     "manufacturerLink": {
-        "de-DE": "https://dutchdrops.com/",
-        "en-GB": "https://dutchdrops.com/"
+        "de-DE": "https://getflowbox.com/",
+        "en-GB": "https://getflowbox.com/"
     },
     "supportLink": {
-        "de-DE": "https://dutchdrops.com/",
-        "en-GB": "https://dutchdrops.com/"
+        "de-DE": "https://getflowbox.com/",
+        "en-GB": "https://getflowbox.com/"
     }
   }
 }
